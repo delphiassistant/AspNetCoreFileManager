@@ -109,6 +109,54 @@ That's it! You now have a fully functional file manager.
 
 ## 📖 Documentation
 
+### Installation Guides
+
+Choose the installation method that works best for you:
+
+#### 🎯 Quick Start (2 minutes)
+- **[QUICK_START_VS.md](QUICK_START_VS.md)** - Fast setup with Visual Studio
+
+#### 📦 NuGet Package Installation (Recommended)
+- **[VISUAL_STUDIO_INSTALLATION_GUIDE.md](VISUAL_STUDIO_INSTALLATION_GUIDE.md)** - Complete Visual Studio guide
+  - Add local package source
+  - Install via Package Manager
+  - Build and verify
+  - Troubleshooting tips
+
+#### 🔧 Manual Installation (For Customization)
+- **[MANUAL_INSTALLATION.md](MANUAL_INSTALLATION.md)** - ⭐ NEW! Complete manual setup guide
+  - Copy CSS/JS files without NuGet
+  - PowerShell and Bash scripts included
+  - Project reference setup (source + DLL)
+  - Update scripts with backup
+  - Perfect for customization and development
+
+### Version & Migration Guides
+
+- **[CHANGELOG.md](CHANGELOG.md)** - Complete version history and changes
+- **[docs/MIGRATION_v1.0.5.md](docs/MIGRATION_v1.0.5.md)** - Migrate from v1.0.4 to v1.0.5 (merged JS files)
+
+### Feature Documentation
+
+- **[docs/features/ZIP_OPERATIONS.md](docs/features/ZIP_OPERATIONS.md)** - ZIP creation and extraction guide
+- **[docs/guides/LOCALIZATION.md](docs/guides/LOCALIZATION.md)** - Multi-language support (English/Persian)
+- **[docs/guides/NUGET_PACKAGE.md](docs/guides/NUGET_PACKAGE.md)** - Package creation and publishing guide
+
+### Troubleshooting & Support
+
+- **[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** - Common issues and solutions
+- **[docs/README.md](docs/README.md)** - Complete documentation index
+
+### Package Status & Testing
+
+- **[PACKAGE_WORKING_v1.0.7.md](PACKAGE_WORKING_v1.0.7.md)** - Latest package status and test results
+- **[TEST_FIXES_SUMMARY.md](TEST_FIXES_SUMMARY.md)** - Recent test fixes and improvements
+- **[test-package-install.ps1](test-package-install.ps1)** - Automated testing script
+
+### Persian Documentation
+
+- **[README_FA.md](README_FA.md)** - Complete Persian documentation (مستندات فارسی)
+
 ### Tag Helper Usage
 
 The easiest way to use the file manager is with the Tag Helper:

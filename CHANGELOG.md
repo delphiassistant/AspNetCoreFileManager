@@ -5,6 +5,70 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2025-01-06
+
+### Added
+- **Manual Installation Guide**: Complete documentation for installing without NuGet ([MANUAL_INSTALLATION.md](MANUAL_INSTALLATION.md))
+  - Step-by-step instructions for copying CSS/JS files manually
+  - PowerShell and Bash scripts for file copying
+  - Project reference setup guide (both source and DLL)
+  - Service registration guide
+  - Troubleshooting section for common issues
+  - Update scripts for new versions
+  - Production deployment recommendations
+  - Alternative installation methods (Git submodule)
+
+### Fixed
+- **NuGet Package Installation**: Cleaned up duplicate entries in `.csproj`
+  - Removed duplicate `Version` elements
+  - Removed duplicate `Description` elements  
+  - Removed duplicate `PackageTags` elements
+  - Removed conflicting `PackagePath` elements
+  - Package now installs correctly in Visual Studio
+  - Files automatically copy to `wwwroot/lib/aspnetcorefilemanager/` on build
+
+### Changed
+- Updated package description to mention .NET 6.0 support
+- Improved documentation structure with manual installation guide
+- Added comprehensive file copying scripts for manual installation
+
+### Documentation
+- **MANUAL_INSTALLATION.md**: Complete manual installation guide (NEW)
+- **VISUAL_STUDIO_INSTALLATION_GUIDE.md**: Guide for Visual Studio NuGet installation
+- **QUICK_START_VS.md**: Quick reference for Visual Studio
+- **CHANGELOG.md**: Updated with version 1.0.7 changes
+
+## [1.0.6] - 2025-01-06
+
+### Fixed
+- **NuGet Package Installation**: Files now correctly copy to `wwwroot/lib/aspnetcorefilemanager/` when package is installed
+  - Removed duplicate `PackagePath` configuration in `.csproj`
+  - Fixed conflict between `contentFiles` and `staticwebassets` paths
+  - Build targets now correctly reference `staticwebassets` folder
+  - Verified with automated test script
+
+### Added
+- **.NET 6.0 Support**: Package now multi-targets .NET 6.0, 7.0, 8.0 (LTS), and 9.0
+- **Automated Test Script**: Created `test-package-install.ps1` to verify package installation
+- **Package Documentation**: Added `NUGET_PACKAGE_FIXED_v1.0.6.md` with complete testing guide
+
+### Changed
+- Updated package description to mention .NET 6.0 support
+- Added `net6` to package tags
+- Improved build targets to include locales folder
+
+### Technical Details
+**Package Contents:**
+- Static web assets: CSS, JS (merged), locales
+- Multi-targeted DLLs: net6.0, net7.0, net8.0, net9.0
+- Build targets: Auto-copy files to consumer project
+- Size: 108.24 KB
+
+**How It Works:**
+1. Static web assets system: Files available at runtime
+2. Build targets: Physical copy to `wwwroot/` during build
+3. Both methods ensure files work in development and production
+
 ## [1.0.5] - 2025-01-06
 
 ### Changed

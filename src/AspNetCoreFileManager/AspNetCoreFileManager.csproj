@@ -53,7 +53,7 @@
 
   <!-- Build targets to copy files to consumer project -->
   <ItemGroup>
-    <None Include="build\AspNetCoreFileManager.targets" Pack="true" PackagePath="build\" />
+    <None Include="build\Barnamenevis.Net.AspNetCoreFileManager.targets" Pack="true" PackagePath="build\" />
   </ItemGroup>
 
 </Project>
