@@ -1,4 +1,4 @@
-# AspNetCoreFileManager - File Manager برای ASP.NET Core
+﻿# AspNetCoreFileManager - File Manager برای ASP.NET Core
 
 یک کامپوننت کامل و قدرتمند برای مدیریت فایل در ASP.NET Core با پشتیبانی از RTL و چند زبانه.
 
@@ -111,11 +111,8 @@ app.Run();
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- File Manager JS - در ترتیب مشخص شده -->
+    <!-- File Manager JS (Merged: core + events + utils + zip + destroy) -->
     <script src="~/lib/aspnetcorefilemanager/js/filemanager.js"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-utils.js"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-zip.js"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-events.js"></script>
     
     <!-- اختیاری: اگر چند زبانه می‌خواهید -->
     <script src="~/lib/aspnetcorefilemanager/js/filemanager-i18n.js"></script>
@@ -354,14 +351,11 @@ AspNetCoreFileManager/
 │        ├─ css/
 │        │  └─ filemanager.css
 │        ├─ js/
-│        │  ├─ filemanager.js
-│        │  ├─ filemanager-events.js
-│        │  ├─ filemanager-utils.js
-│        │  ├─ filemanager-zip.js
-│        │  └─ filemanager-i18n.js  ← NEW
+│        │  ├─ filemanager.js           ← تک فایل merged شامل همه قابلیت‌ها
+│        │  └─ filemanager-i18n.js      ← اختیاری برای چند زبانه
 │        └─ locales/
-│           ├─ en.json  ← NEW
-│           └─ fa.json  ← NEW
+│           ├─ en.json  ← ترجمه انگلیسی
+│           └─ fa.json  ← ترجمه فارسی
 ├─ tests/
 │  └─ AspNetCoreFileManager.Tests/
 └─ samples/
@@ -473,7 +467,7 @@ src/AspNetCoreFileManager/bin/Release/AspNetCoreFileManager.1.0.4.nupkg
 
 - **QUICKSTART.md** - شروع سریع
 - **QUICKSTART_ZIP.md** - راهنمای ZIP
-- **NUGET_PACKAGE_GUIDE.md** - راهنمای NuGet
+- **NUGET_PACKAGE_GUIDE.md** - راهنماهای NuGet
 
 ---
 

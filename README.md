@@ -90,11 +90,11 @@ app.Run();
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- File Manager JS - Load in this exact order! -->
+    <!-- File Manager JS (Merged: core + events + utils + zip + destroy) -->
     <script src="~/lib/aspnetcorefilemanager/js/filemanager.js"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-utils.js"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-zip.js"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-events.js"></script>
+    
+    <!-- Optional: File Manager i18n (only if you need localization) -->
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-i18n.js"></script>
 </body>
 ```
 
@@ -290,7 +290,13 @@ AspNetCoreFileManager/
 │       ├── Extensions/                 # Service extensions
 │       └── wwwroot/                    # Static assets
 │           ├── css/                    # Stylesheets
-│           └── js/                     # JavaScript files
+│           │   └── filemanager.css
+│           ├── js/                     # JavaScript files
+│           │   ├── filemanager.js          # Main JS (merged: core + events + utils + zip + destroy)
+│           │   └── filemanager-i18n.js     # Optional: Localization
+│           └── locales/                # Translation files
+│               ├── en.json             # English translations
+│               └── fa.json             # Persian translations
 ├── samples/
 │   └── AspNetCoreFileManager.Demo/     # Demo application
 ├── tests/

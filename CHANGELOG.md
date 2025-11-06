@@ -1,9 +1,57 @@
-# Changelog
+﻿# Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.5] - 2025-01-06
+
+### Changed
+- **JavaScript Files Merged**: All FileManager JavaScript files are now merged into a single `filemanager.js` file
+  - Combined: core, events, utils, ZIP operations, and destroy methods
+  - Reduced from 5 separate JS files to 1 merged file
+  - `filemanager-i18n.js` kept separate for localization (optional)
+  - Benefits: Reduced HTTP requests, better browser caching, cleaner structure
+  - **Breaking Change**: Update your `_Layout.cshtml` to load only 2 files instead of 6:
+    ```html
+    <!-- OLD (deprecated) -->
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager.js"></script>
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-events.js"></script>
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-utils.js"></script>
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-zip.js"></script>
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-destroy.js"></script>
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-i18n.js"></script>
+    
+    <!-- NEW (current) -->
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager.js"></script>
+    <script src="~/lib/aspnetcorefilemanager/js/filemanager-i18n.js"></script>
+    ```
+
+### Fixed
+- Fixed loading message localization in Persian locale
+- Added "در حال بارگذاری..." translation for Persian loading overlay
+
+### Documentation
+- **Major Documentation Cleanup**: Reorganized all documentation into structured folders
+  - Reduced root markdown files from 28 to 4 (86% reduction)
+  - Created organized `docs/` structure with guides, features, and archive folders
+  - Deleted 11 obsolete fix documentation files
+  - Merged related content (ZIP guides, quick starts)
+  - Created comprehensive documentation index
+  - Updated all READMEs (English and Persian) to reflect merged JS structure
+  - Added [DOCUMENTATION_CLEANUP_SUMMARY.md](DOCUMENTATION_CLEANUP_SUMMARY.md) with full details
+
+### Added
+- `docs/README.md` - Comprehensive documentation index
+- `docs/guides/` - Developer guides (Localization, NuGet Package)
+- `docs/features/` - Feature documentation (ZIP Operations)
+- `docs/archive/` - Historical version documentation
+
+### Removed
+- Obsolete documentation files (COPY_CUT_PASTE_FIX.md, DARK_MODE_FIX.md, etc.)
+- Duplicate content (merged into main docs)
+- Temporary fix documentation (functionality now working)
 
 ## [1.0.4] - 2025-01-05
 
