@@ -1,4 +1,4 @@
-using AspNetCoreFileManager.Controllers;
+﻿using AspNetCoreFileManager.Controllers;
 using AspNetCoreFileManager.Models;
 using AspNetCoreFileManager.Services;
 using FluentAssertions;
@@ -229,11 +229,13 @@ public class FileManagerControllerTests
         var result = _controller.FileOperations(request);
 
         // Assert
-        result.Should().BeOfType<OkObjectResult>();
-        var okResult = result as OkObjectResult;
-        var response = okResult.Value as FileManagerResponse;
-        response.Error.Should().NotBeNull();
-        response.Error.Message.Should().Contain("Unknown action");
+        result.Should().BeOfType<ObjectResult>();
+        var objectResult = result as ObjectResult;
+        objectResult!.StatusCode.Should().Be(400);
+        var response = objectResult.Value as FileManagerResponse;
+        response.Should().NotBeNull();
+        response!.Error.Should().NotBeNull();
+        response.Error!.Message.Should().Contain("Unknown action");
     }
 
     [Fact]

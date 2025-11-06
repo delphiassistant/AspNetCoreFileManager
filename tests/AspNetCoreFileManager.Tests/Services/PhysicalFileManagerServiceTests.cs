@@ -1,4 +1,4 @@
-using AspNetCoreFileManager.Services;
+﻿using AspNetCoreFileManager.Services;
 using FluentAssertions;
 using Xunit;
 
@@ -253,9 +253,13 @@ public class PhysicalFileManagerServiceTests : IDisposable
     [Fact]
     public void PathTraversal_ShouldBeBlocked()
     {
-        // Act & Assert
-        Assert.Throws<UnauthorizedAccessException>(() => 
-            _service.GetFiles("/../../../"));
+        // Act
+        var result = _service.GetFiles("/../../../");
+
+        // Assert
+        result.Should().NotBeNull();
+        result.Error.Should().NotBeNull();
+        result.Error.Message.Should().Contain("Access denied");
     }
 }
 
