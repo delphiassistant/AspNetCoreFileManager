@@ -1,0 +1,116 @@
+@{
+    ViewData["Title"] = "Basic Usage";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4">Basic Usage</h1>
+    
+    <p class="lead">
+        The simplest way to use the File Manager is with the Tag Helper. This example shows minimal configuration.
+    </p>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Example</h2>
+        <div class="card">
+            <div class="card-body">
+                <file-manager id="basicFileManager" 
+                             path="/" 
+                             view="largeicons">
+                </file-manager>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Code</h2>
+        <div class="code-block">
+            <pre><code>&lt;file-manager id="basicFileManager" 
+             path="/" 
+             view="largeicons"&gt;
+&lt;/file-manager&gt;</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Available Attributes</h2>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>string</td>
+                    <td>auto-generated</td>
+                    <td>Unique identifier for the file manager instance</td>
+                </tr>
+                <tr>
+                    <td><code>path</code></td>
+                    <td>string</td>
+                    <td>"/"</td>
+                    <td>Initial path to display</td>
+                </tr>
+                <tr>
+                    <td><code>view</code></td>
+                    <td>string</td>
+                    <td>"largeicons"</td>
+                    <td>Initial view mode: "largeicons" or "details"</td>
+                </tr>
+                <tr>
+                    <td><code>height</code></td>
+                    <td>string</td>
+                    <td>"600px"</td>
+                    <td>Height of the file manager</td>
+                </tr>
+                <tr>
+                    <td><code>allow-drag-drop</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Enable drag and drop file upload</td>
+                </tr>
+                <tr>
+                    <td><code>allow-multi-selection</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Allow selecting multiple files</td>
+                </tr>
+                <tr>
+                    <td><code>show-toolbar</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show the toolbar</td>
+                </tr>
+                <tr>
+                    <td><code>show-navigation</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show the navigation pane</td>
+                </tr>
+                <tr>
+                    <td><code>show-context-menu</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show context menu on right-click</td>
+                </tr>
+                <tr>
+                    <td><code>enable-persistence</code></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>Save state on page reload</td>
+                </tr>
+                <tr>
+                    <td><code>enable-rtl</code></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>Enable right-to-left layout</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

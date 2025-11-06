@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="CopyAspNetCoreFileManagerAssets" BeforeTargets="Build">
+    <PropertyGroup>
+      <AspNetCoreFileManagerSourcePath>$(MSBuildThisFileDirectory)..\contentFiles\any\any\wwwroot\lib\aspnetcorefilemanager</AspNetCoreFileManagerSourcePath>
+      <AspNetCoreFileManagerTargetPath>$(MSBuildProjectDirectory)\wwwroot\lib\aspnetcorefilemanager</AspNetCoreFileManagerTargetPath>
+    </PropertyGroup>
+    
+    <Message Text="Copying AspNetCoreFileManager assets from: $(AspNetCoreFileManagerSourcePath)" Importance="high" />
+    <Message Text="Copying AspNetCoreFileManager assets to: $(AspNetCoreFileManagerTargetPath)" Importance="high" />
+    
+    <!-- Create target directory if it doesn't exist -->
+    <MakeDir Directories="$(AspNetCoreFileManagerTargetPath)" Condition="!Exists('$(AspNetCoreFileManagerTargetPath)')" />
+    <MakeDir Directories="$(AspNetCoreFileManagerTargetPath)\css" Condition="!Exists('$(AspNetCoreFileManagerTargetPath)\css')" />
+    <MakeDir Directories="$(AspNetCoreFileManagerTargetPath)\js" Condition="!Exists('$(AspNetCoreFileManagerTargetPath)\js')" />
+    
+    <!-- Copy CSS files -->
+    <ItemGroup>
+      <AspNetCoreFileManagerCssFiles Include="$(AspNetCoreFileManagerSourcePath)\css\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AspNetCoreFileManagerCssFiles)" 
+          DestinationFiles="@(AspNetCoreFileManagerCssFiles->'$(AspNetCoreFileManagerTargetPath)\css\%(RecursiveDir)%(Filename)%(Extension)')" 
+          SkipUnchangedFiles="true" />
+    
+    <!-- Copy JS files -->
+    <ItemGroup>
+      <AspNetCoreFileManagerJsFiles Include="$(AspNetCoreFileManagerSourcePath)\js\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AspNetCoreFileManagerJsFiles)" 
+          DestinationFiles="@(AspNetCoreFileManagerJsFiles->'$(AspNetCoreFileManagerTargetPath)\js\%(RecursiveDir)%(Filename)%(Extension)')" 
+          SkipUnchangedFiles="true" />
+    
+    <Message Text="AspNetCoreFileManager assets copied successfully!" Importance="high" />
+  </Target>
+</Project>
+

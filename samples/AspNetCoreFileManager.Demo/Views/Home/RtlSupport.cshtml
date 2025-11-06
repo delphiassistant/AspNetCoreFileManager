@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "RTL Support";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4">RTL (Right-to-Left) Support</h1>
+    
+    <p class="lead">
+        The File Manager fully supports RTL layout for languages like Arabic, Persian, Hebrew, and Urdu.
+    </p>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">RTL File Manager</h2>
+        <div class="card">
+            <div class="card-body">
+                <file-manager id="rtlFileManager" 
+                             path="/" 
+                             view="largeicons"
+                             enable-rtl="true"
+                             height="500px">
+                </file-manager>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Code</h2>
+        <div class="code-block">
+            <pre><code>&lt;file-manager id="rtlFileManager" 
+             path="/" 
+             view="largeicons"
+             enable-rtl="true"
+             height="500px"&gt;
+&lt;/file-manager&gt;</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">RTL Features</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <i class="fa fa-check-circle text-success me-2"></i>
+                Right-to-left text direction
+            </li>
+            <li class="list-group-item">
+                <i class="fa fa-check-circle text-success me-2"></i>
+                Mirrored layout (navigation pane on the right)
+            </li>
+            <li class="list-group-item">
+                <i class="fa fa-check-circle text-success me-2"></i>
+                Reversed breadcrumb separators
+            </li>
+            <li class="list-group-item">
+                <i class="fa fa-check-circle text-success me-2"></i>
+                Right-aligned text in table columns
+            </li>
+            <li class="list-group-item">
+                <i class="fa fa-check-circle text-success me-2"></i>
+                Proper icon alignment
+            </li>
+        </ul>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">JavaScript Configuration</h2>
+        <div class="code-block">
+            <pre><code>var fileManager = new FileManager('#myElement', {
+    enableRtl: true,
+    // ... other options
+});</code></pre>
+        </div>
+    </div>
+    
+    <div class="alert alert-info mt-4">
+        <i class="fa fa-info-circle me-2"></i>
+        <strong>Note:</strong> RTL mode automatically adjusts all UI elements including the toolbar, navigation pane, 
+        breadcrumb, and file listings to work correctly with right-to-left languages.
+    </div>
+</div>
+

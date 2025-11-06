@@ -1,0 +1,209 @@
+﻿{
+  "toolbar": {
+    "newFolder": "New Folder",
+    "upload": "Upload",
+    "delete": "Delete",
+    "download": "Download",
+    "rename": "Rename",
+    "zip": "Create ZIP",
+    "unzip": "Extract ZIP",
+    "refresh": "Refresh",
+    "view": "View",
+    "details": "Details",
+    "cut": "Cut",
+    "copy": "Copy",
+    "paste": "Paste",
+    "move": "Move",
+    "sortBy": "Sort By"
+  },
+  "contextMenu": {
+    "open": "Open",
+    "cut": "Cut",
+    "copy": "Copy",
+    "paste": "Paste",
+    "delete": "Delete",
+    "rename": "Rename",
+    "zip": "Create ZIP",
+    "unzip": "Extract ZIP",
+    "details": "Details",
+    "move": "Move To",
+    "copyTo": "Copy To"
+  },
+  "dialogs": {
+    "newFolder": {
+      "title": "Create New Folder",
+      "label": "Folder Name:",
+      "placeholder": "Enter folder name",
+      "create": "Create",
+      "cancel": "Cancel"
+    },
+    "rename": {
+      "title": "Rename",
+      "label": "New Name:",
+      "placeholder": "Enter new name",
+      "rename": "Rename",
+      "cancel": "Cancel"
+    },
+    "upload": {
+      "title": "Upload Files",
+      "selectFiles": "Select Files",
+      "dragDrop": "or drag and drop files here",
+      "upload": "Upload Files",
+      "cancel": "Cancel"
+    },
+    "createZip": {
+      "title": "Create ZIP Archive",
+      "label": "ZIP File Name:",
+      "placeholder": "archive.zip",
+      "create": "Create ZIP",
+      "cancel": "Cancel"
+    },
+    "moveTo": {
+      "title": "Move To",
+      "label": "Select Destination:",
+      "move": "Move",
+      "cancel": "Cancel"
+    },
+    "copyTo": {
+      "title": "Copy To",
+      "label": "Select Destination:",
+      "copy": "Copy",
+      "cancel": "Cancel"
+    },
+    "delete": {
+      "title": "Confirm Delete",
+      "message": "Are you sure you want to delete the selected item(s)?",
+      "confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "extractZip": {
+      "title": "Extract ZIP",
+      "confirmSingle": "Extract \"{0}\" to the current folder?",
+      "confirmMultiple": "Extract {0} ZIP files to the current folder?\\n\\nFiles: {1}",
+      "confirm": "Extract",
+      "cancel": "Cancel"
+    }
+  },
+  "messages": {
+    "noSelection": "No Selection",
+    "noSelectionDesc": "Please select one or more items first.",
+    "noFilesSelected": "No files selected",
+    "noFilesSelectedDesc": "Please select one or more files or folders.",
+    "invalidSelection": "Invalid Selection",
+    "nonZipFiles": "Please select only ZIP files to extract. Some non-ZIP files are currently selected.",
+    "selectZipFiles": "Please select one or more ZIP files to extract.",
+    "selectZipFilesDesc": "Only ZIP files can be extracted.",
+    "selectItemsForZip": "Please select one or more files or folders to create a ZIP archive.",
+    "selectSingleItem": "Please select exactly one item.",
+    "selectSingleItemRename": "Please select a single item to rename",
+    "selectDestination": "Please select a destination folder.",
+    "enterFolderName": "Please enter a folder name",
+    "enterNewName": "Please enter a new name",
+    "enterZipName": "Please enter a name for the ZIP archive",
+    "selectItemsToDelete": "Please select items to delete",
+    "selectItemsToCopy": "Please select one or more items to copy.",
+    "selectItemsToCut": "Please select one or more items to cut.",
+    "clipboardEmpty": "Clipboard Empty",
+    "clipboardEmptyDesc": "No items in clipboard. Please copy or cut some items first.",
+    "sameLocation": "Same Location",
+    "sameLocationDesc": "You are trying to paste in the same location. Please navigate to a different folder.",
+    "confirmDelete": "Confirm Delete",
+    "confirmDeleteMsg": "Are you sure you want to delete {0} item(s)?",
+    "confirmCopy": "Copy Items",
+    "confirmCopyMsg": "Copy {0} item(s) from \"{1}\" to \"{2}\"?",
+    "confirmMove": "Move Items",
+    "confirmMoveMsg": "Move {0} item(s) from \"{1}\" to \"{2}\"?",
+    "confirmExtractZip": "Extract ZIP",
+    "confirmExtractSingle": "Extract \"{0}\" to the current folder?",
+    "confirmExtractMultiple": "Extract {0} ZIP files to the current folder?\n\nFiles: {1}",
+    "validationError": "Validation Error",
+    "operationSuccess": "Operation completed successfully",
+    "createZipSuccess": "ZIP archive created successfully",
+    "extractZipSuccess": "Successfully extracted {0} file(s)",
+    "uploadSuccess": "Files uploaded successfully",
+    "deleteSuccess": "Items deleted successfully",
+    "renameSuccess": "Item renamed successfully",
+    "moveSuccess": "Items moved successfully",
+    "copySuccess": "Items copied successfully",
+    "createFolderSuccess": "Folder created successfully",
+    "operationFailed": "Operation Failed",
+    "createZipFailed": "Failed to create ZIP archive",
+    "extractZipFailed": "Failed to extract ZIP archive",
+    "someExtractionsFailed": "Some extractions failed:\\n{0}",
+    "uploadFailed": "File upload failed",
+    "deleteFailed": "Delete operation failed",
+    "renameFailed": "Rename operation failed",
+    "moveFailed": "Move operation failed",
+    "copyFailed": "Copy operation failed",
+    "createFolderFailed": "Failed to create folder",
+    "fileExists": "A file with the name '{0}' already exists.",
+    "folderExists": "A folder with the name '{0}' already exists.",
+    "invalidName": "Invalid name",
+    "invalidPath": "Invalid path",
+    "accessDenied": "Access denied",
+    "networkError": "Network error. Please check your connection."
+  },
+  "view": {
+    "largeIcons": "Large Icons",
+    "details": "Details"
+  },
+  "dialog": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "toast": {
+    "copied": "Copied",
+    "copiedMessage": "{0} item(s) copied to clipboard",
+    "cut": "Cut",
+    "cutMessage": "{0} item(s) cut to clipboard",
+    "success": "Success",
+    "error": "Error"
+  },
+  "modal": {
+    "createFolder": {
+      "title": "Create New Folder",
+      "placeholder": "Folder name",
+      "create": "Create",
+      "cancel": "Cancel"
+    },
+    "rename": {
+      "title": "Rename",
+      "placeholder": "New name",
+      "rename": "Rename",
+      "cancel": "Cancel"
+    },
+    "upload": {
+      "title": "Upload Files",
+      "dragDrop": "Drag and drop files here or click to browse",
+      "browseFiles": "Browse Files",
+      "filesToUpload": "Files to upload:",
+      "upload": "Upload",
+      "cancel": "Cancel"
+    },
+    "createZip": {
+      "title": "Create ZIP Archive",
+      "placeholder": "Archive name",
+      "create": "Create",
+      "cancel": "Cancel"
+    }
+  },
+  "columns": {
+    "name": "Name",
+    "dateModified": "Date Modified",
+    "type": "Type",
+    "size": "Size"
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "navigation": {
+    "folders": "Folders",
+    "files": "Files"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "noItems": "No items to display",
+  "emptyFolder": "This folder is empty"
+}

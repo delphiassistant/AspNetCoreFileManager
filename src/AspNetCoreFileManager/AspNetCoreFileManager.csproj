@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>AspNetCoreFileManager</PackageId>
+    <Version>1.0.4</Version>
+    <Authors>Your Name</Authors>
+    <Description>A full-featured file manager component for ASP.NET Core with support for file operations, image preview, upload/download, ZIP operations, and more.</Description>
+    <PackageTags>aspnetcore;filemanager;file-manager;mvc;razor;zip</PackageTags>
+    <RepositoryUrl>https://github.com/delphiassistant/AspNetCoreFileManager</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+  </ItemGroup>
+
+  <!-- Explicitly include C# files, excluding obj and bin -->
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="obj\**;bin\**" />
+  </ItemGroup>
+
+  <!-- Explicitly include Razor views -->
+  <ItemGroup>
+    <Content Include="**\*.cshtml" Exclude="obj\**;bin\**" />
+  </ItemGroup>
+
+  <!-- Include wwwroot files in NuGet package -->
+  <ItemGroup>
+    <Content Include="wwwroot\**\*.*">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles\any\any\wwwroot\lib\aspnetcorefilemanager</PackagePath>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <!-- Include README in package -->
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Build targets to copy files to consumer project -->
+  <ItemGroup>
+    <None Include="build\AspNetCoreFileManager.targets" Pack="true" PackagePath="build\" />
+  </ItemGroup>
+
+</Project>
+

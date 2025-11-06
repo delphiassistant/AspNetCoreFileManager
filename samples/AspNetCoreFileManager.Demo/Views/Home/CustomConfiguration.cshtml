@@ -1,0 +1,186 @@
+@{
+    ViewData["Title"] = "Custom Configuration";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4">Custom Configuration</h1>
+    
+    <p class="lead">
+        You can customize the File Manager with various configuration options to suit your needs.
+    </p>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Example 1: Minimal File Manager</h2>
+        <p>File manager with no toolbar, navigation pane, or context menu - perfect for simple file browsing.</p>
+        <div class="card">
+            <div class="card-body">
+                <file-manager id="minimalFileManager" 
+                             path="/" 
+                             view="details"
+                             show-toolbar="false"
+                             show-navigation="false"
+                             show-context-menu="false"
+                             height="400px">
+                </file-manager>
+            </div>
+        </div>
+        <div class="code-block mt-3">
+            <pre><code>&lt;file-manager id="minimalFileManager" 
+             path="/" 
+             view="details"
+             show-toolbar="false"
+             show-navigation="false"
+             show-context-menu="false"
+             height="400px"&gt;
+&lt;/file-manager&gt;</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Example 2: Read-Only File Browser</h2>
+        <p>File manager starting in Documents folder with persistence enabled.</p>
+        <div class="card">
+            <div class="card-body">
+                <file-manager id="documentsFileManager" 
+                             path="/Documents" 
+                             view="details"
+                             enable-persistence="true"
+                             height="500px">
+                </file-manager>
+            </div>
+        </div>
+        <div class="code-block mt-3">
+            <pre><code>&lt;file-manager id="documentsFileManager" 
+             path="/Documents" 
+             view="details"
+             enable-persistence="true"
+             height="500px"&gt;
+&lt;/file-manager&gt;</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Example 3: Compact File Manager</h2>
+        <p>Smaller file manager without navigation pane - great for sidebars or modals.</p>
+        <div class="card">
+            <div class="card-body">
+                <file-manager id="compactFileManager" 
+                             path="/" 
+                             view="largeicons"
+                             show-navigation="false"
+                             height="350px">
+                </file-manager>
+            </div>
+        </div>
+        <div class="code-block mt-3">
+            <pre><code>&lt;file-manager id="compactFileManager" 
+             path="/" 
+             view="largeicons"
+             show-navigation="false"
+             height="350px"&gt;
+&lt;/file-manager&gt;</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">JavaScript API</h2>
+        <p>You can also create and configure the file manager using JavaScript for more control.</p>
+        <div class="code-block">
+            <pre><code>&lt;div id="customFileManager"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    var fileManager = new FileManager('#customFileManager', {
+        path: '/Pictures',
+        view: 'largeicons',
+        allowDragAndDrop: true,
+        allowMultiSelection: true,
+        showFileExtension: true,
+        showHiddenItems: false,
+        enablePersistence: false,
+        enableRtl: false,
+        ajaxSettings: {
+            url: '/api/FileManager/FileOperations',
+            uploadUrl: '/api/FileManager/Upload',
+            downloadUrl: '/api/FileManager/Download',
+            getImageUrl: '/api/FileManager/GetImage'
+        },
+        toolbarSettings: {
+            visible: true,
+            items: ['NewFolder', 'Upload', 'Delete', 'Download', 'Rename', 'Refresh', 'View', 'Details']
+        },
+        navigationPaneSettings: {
+            visible: true,
+            minWidth: '200px',
+            maxWidth: '400px'
+        },
+        contextMenuSettings: {
+            visible: true,
+            items: ['Open', '|', 'Cut', 'Copy', 'Paste', 'Delete', 'Rename', '|', 'Details']
+        }
+    });
+    
+    // Event handlers
+    fileManager.on('success', function(e) {
+        console.log('Operation succeeded:', e);
+    });
+    
+    fileManager.on('failure', function(e) {
+        console.log('Operation failed:', e);
+    });
+&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Public Methods</h2>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>refreshFiles()</code></td>
+                    <td>Refreshes the current folder contents</td>
+                </tr>
+                <tr>
+                    <td><code>getSelectedItems()</code></td>
+                    <td>Returns array of currently selected items</td>
+                </tr>
+                <tr>
+                    <td><code>getCurrentPath()</code></td>
+                    <td>Returns the current path</td>
+                </tr>
+                <tr>
+                    <td><code>destroy()</code></td>
+                    <td>Destroys the file manager instance</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="demo-section">
+        <h2 class="mb-3">Events</h2>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>success</code></td>
+                    <td>Triggered when an operation completes successfully</td>
+                </tr>
+                <tr>
+                    <td><code>failure</code></td>
+                    <td>Triggered when an operation fails</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

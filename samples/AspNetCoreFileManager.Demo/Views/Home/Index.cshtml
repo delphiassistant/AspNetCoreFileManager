@@ -1,0 +1,161 @@
+﻿@{
+	ViewData["Title"] = "Home";
+}
+
+<div class="container my-5">
+	<div class="text-center mb-5">
+		<h1 class="display-4 fw-bold">ASP.NET Core File Manager</h1>
+		<p class="lead">A modern, full-featured file manager component for ASP.NET Core applications</p>
+		<div class="mt-4">
+			<a asp-action="BasicUsage" class="btn btn-primary btn-lg me-2">
+				<i class="fa fa-play"></i> Get Started
+			</a>
+			<a href="https://github.com/delphiassistant/AspNetCoreFileManager" class="btn btn-outline-primary btn-lg">
+				<i class="fab fa-github"></i> View on GitHub
+			</a>
+		</div>
+	</div>
+
+	<div class="row my-5">
+		<div class="col-md-4 mb-4">
+			<div class="card feature-card">
+				<div class="card-body text-center">
+					<i class="fa fa-bolt feature-icon"></i>
+					<h3 class="card-title">Easy to Use</h3>
+					<p class="card-text">Simple Tag Helper syntax makes integration a breeze. Just add one line to your Razor pages.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 mb-4">
+			<div class="card feature-card">
+				<div class="card-body text-center">
+					<i class="fa fa-palette feature-icon"></i>
+					<h3 class="card-title">Modern UI</h3>
+					<p class="card-text">Built with Bootstrap 5 and Font Awesome. Responsive design works on all devices.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 mb-4">
+			<div class="card feature-card">
+				<div class="card-body text-center">
+					<i class="fa fa-rocket feature-icon"></i>
+					<h3 class="card-title">Feature Rich</h3>
+					<p class="card-text">Upload, download, rename, delete, search, and more. Everything you need out of the box.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="demo-section">
+		<h2 class="mb-4">Live Demo</h2>
+		<div class="card">
+			<div class="card-body">
+				<file-manager id="demoFileManager"
+				              path="/"
+				              view="largeicons"
+				              height="500px">
+				</file-manager>
+			</div>
+		</div>
+	</div>
+
+	<div class="demo-section">
+		<h2 class="mb-4">Key Features</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<ul class="list-group">
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						File and folder operations (create, rename, delete, copy, move)
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						File upload with drag-and-drop support
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						File download (single and multiple as ZIP)
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Image preview with modal viewer
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Search functionality
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Breadcrumb navigation
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<ul class="list-group">
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Multiple view modes (Large Icons and Details)
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Context menu for quick actions
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Sortable columns in details view
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						Multi-selection with checkboxes
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						State persistence (remembers view and path)
+					</li>
+					<li class="list-group-item">
+						<i class="fa fa-check-circle text-success me-2"></i>
+						RTL (Right-to-Left) support
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="demo-section">
+		<h2 class="mb-4">Quick Start</h2>
+		<div class="row">
+			<div class="col-12">
+				<h4>1. Install the NuGet Package</h4>
+				<div class="code-block mb-3">
+					<pre><code>dotnet add package AspNetCoreFileManager</code></pre>
+				</div>
+
+				<h4>2. Configure in Program.cs</h4>
+				<div class="code-block mb-3">
+					<pre><code>using AspNetCoreFileManager.Extensions;
+
+var filesPath = Path.Combine(builder.Environment.ContentRootPath, "Files");
+builder.Services.AddFileManager(filesPath);</code></pre>
+				</div>
+
+				<h4>3. Add to Your Razor Page</h4>
+				<div class="code-block mb-3">
+					<pre><code>&lt;file-manager id="myFileManager" path="/" view="largeicons"&gt;&lt;/file-manager&gt;</code></pre>
+				</div>
+
+				<h4>4. Include Required Assets</h4>
+				<div class="code-block mb-3">
+					<pre><code>&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="~/lib/aspnetcorefilemanager/css/filemanager.css"&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script src="~/lib/aspnetcorefilemanager/js/filemanager.js"&gt;&lt;/script&gt;
+&lt;script src="~/lib/aspnetcorefilemanager/js/filemanager-events.js"&gt;&lt;/script&gt;
+&lt;script src="~/lib/aspnetcorefilemanager/js/filemanager-utils.js"&gt;&lt;/script&gt;</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

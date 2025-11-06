@@ -1,0 +1,304 @@
+@{
+    ViewData["Title"] = "فارسی‌سازی - Persian Localization";
+}
+@section PageHead {
+<link rel="stylesheet" href="~/lib/VazirMatn/Vazirmatn.css">
+}
+<style>
+    .demo-section {
+        margin-bottom: 2rem;
+    }
+    .code-block {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        padding: 0;
+    }
+    .code-block pre {
+        margin: 0;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .code-block code {
+        color: #212529;
+        font-size: 0.875rem;
+    }
+    
+    /* Fix button group in RTL - swap border radius */
+    [dir="rtl"] .btn-group .btn {
+        border-radius: 0;
+    }
+    
+    [dir="rtl"] .btn-group .btn:first-child {
+        border-top-right-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    [dir="rtl"] .btn-group .btn:last-child {
+        border-top-left-radius: 0.375rem;
+        border-bottom-left-radius: 0.375rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    /* Fix button borders in RTL */
+    [dir="rtl"] .btn-group .btn:not(:last-child) {
+        border-left: 0;
+        border-right: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    
+    [dir="rtl"] .btn-group .btn:not(:first-child) {
+        margin-left: 0;
+        border-right: 0;
+    }
+</style>
+
+<div class="container my-5" dir="rtl">
+    <h1 class="mb-4">نمونه فارسی‌سازی فایل منیجر</h1>
+    <p class="lead text-muted">مدیریت فایل با پشتیبانی کامل از زبان فارسی و راست به چپ (RTL)</p>
+    
+    <div class="alert alert-info">
+        <h4><i class="fas fa-info-circle"></i> درباره فارسی‌سازی</h4>
+        <p class="mb-2">
+            این صفحه نحوه استفاده از سیستم چندزبانه (Localization) در فایل منیجر را نمایش می‌دهد. 
+            فایل منیجر به صورت خودکار جهت راست‌به‌چپ (RTL) را برای زبان‌های فارسی، عربی و عبری فعال می‌کند.
+        </p>
+        <p class="mb-0">
+            <strong>ویژگی‌ها:</strong> پشتیبانی از چند زبان، تغییر خودکار جهت، ترجمه کامل تمام عناصر رابط کاربری
+        </p>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h3 class="mb-3">انتخاب زبان / Language Switcher</h3>
+            <div class="btn-group mb-3" role="group">
+                <button type="button" class="btn btn-outline-primary" onclick="switchLocale('en')">
+                    <i class="fas fa-flag-usa"></i> English
+                </button>
+                <button type="button" class="btn btn-outline-primary active" onclick="switchLocale('fa')">
+                    <i class="fas fa-flag"></i> فارسی
+                </button>
+            </div>
+            <p class="text-muted small">
+                با کلیک بر روی دکمه‌های بالا، زبان فایل منیجر به صورت لحظه‌ای تغییر می‌کند.
+            </p>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h3 class="mb-3">فایل منیجر با زبان فارسی</h3>
+        
+        <div class="card">
+            <div class="card-body">
+                <div id="persianFileManager"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-section mt-5">
+        <h3 class="mb-3">فایل‌های زبان / Locale Files</h3>
+        <p>سیستم چندزبانه از فایل‌های JSON در مسیر <code>/wwwroot/locales/</code> استفاده می‌کند:</p>
+        
+        <ul>
+            <li><code>en.json</code> - ترجمه‌های انگلیسی (English translations)</li>
+            <li><code>fa.json</code> - ترجمه‌های فارسی (Persian translations)</li>
+        </ul>
+        
+        <div class="alert alert-secondary mt-3">
+            <strong>نکته:</strong> برای اضافه کردن زبان جدید، کافی است یک فایل JSON با کد زبان مورد نظر (مثلاً <code>ar.json</code> برای عربی) در مسیر <code>locales/</code> ایجاد کنید.
+        </div>
+    </div>
+
+    <div class="demo-section mt-5">
+        <h3 class="mb-3">نحوه استفاده / How to Use</h3>
+        <p class="mb-3">برای استفاده از سیستم فارسی‌سازی، کافی است اسکریپت i18n را بارگذاری کنید و locale را مشخص کنید:</p>
+        
+        <div class="code-block">
+            <pre dir="ltr" style="text-align: left;"><code>&lt;!-- بارگذاری اسکریپت i18n --&gt;
+&lt;script src="~/lib/aspnetcorefilemanager/js/filemanager-i18n.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// راه‌اندازی فایل منیجر با زبان فارسی
+document.addEventListener('DOMContentLoaded', async function() {
+    const fm = new FileManager('#persianFileManager', {
+        path: '/',
+        view: 'largeicons',
+        ajaxSettings: {
+            url: '/api/FileManager/FileOperations',
+            uploadUrl: '/api/FileManager/Upload',
+            downloadUrl: '/api/FileManager/Download',
+            getImageUrl: '/api/FileManager/GetImage'
+        }
+    });
+    
+    // بارگذاری زبان فارسی
+    await fm.initializeWithLocale('fa');
+});
+&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+
+    <div class="demo-section mt-5">
+        <h3 class="mb-3">ترجمه‌های موجود / Available Translations</h3>
+        <p class="mb-3">جدول زیر نمونه‌ای از کلیدها و ترجمه‌های موجود در فایل‌های locale را نشان می‌دهد:</p>
+        
+        <table class="table table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th>کلید / Key</th>
+                    <th>انگلیسی / English</th>
+                    <th>فارسی / Persian</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>toolbar.newFolder</code></td>
+                    <td>New Folder</td>
+                    <td>پوشه جدید</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.upload</code></td>
+                    <td>Upload</td>
+                    <td>بارگذاری</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.cut</code></td>
+                    <td>Cut</td>
+                    <td>برش</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.copy</code></td>
+                    <td>Copy</td>
+                    <td>کپی</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.paste</code></td>
+                    <td>Paste</td>
+                    <td>چسباندن</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.delete</code></td>
+                    <td>Delete</td>
+                    <td>حذف</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.zip</code></td>
+                    <td>Create ZIP</td>
+                    <td>ساخت ZIP</td>
+                </tr>
+                <tr>
+                    <td><code>toolbar.unzip</code></td>
+                    <td>Extract ZIP</td>
+                    <td>استخراج ZIP</td>
+                </tr>
+                <tr>
+                    <td><code>messages.copiedItems</code></td>
+                    <td>Copied {0} item(s)</td>
+                    <td>{0} مورد کپی شد</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="alert alert-success mt-3">
+            <strong>💡 نکته:</strong> برای مشاهده لیست کامل ترجمه‌ها، فایل‌های <code>en.json</code> و <code>fa.json</code> را در پوشه <code>/wwwroot/lib/aspnetcorefilemanager/locales/</code> مشاهده کنید.
+        </div>
+    </div>
+    
+    <div class="demo-section mt-5">
+        <h3 class="mb-3">ویژگی‌های RTL / RTL Features</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-check-circle text-success"></i> جهت خودکار</h5>
+                        <p class="card-text">فایل منیجر به صورت خودکار جهت راست به چپ را برای زبان‌های فارسی، عربی و عبری تشخیص داده و فعال می‌کند.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-check-circle text-success"></i> ترتیب عناصر</h5>
+                        <p class="card-text">تمام عناصر رابط کاربری شامل دکمه‌ها، منوها و جداول به صورت خودکار برای RTL تنظیم می‌شوند.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-check-circle text-success"></i> متن‌های راست چین</h5>
+                        <p class="card-text">تمام متن‌ها شامل نام فایل‌ها، پوشه‌ها و پیام‌ها به درستی راست چین نمایش داده می‌شوند.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-check-circle text-success"></i> آیکون‌ها</h5>
+                        <p class="card-text">آیکون‌های navigation و breadcrumb به صورت خودکار برای RTL معکوس می‌شوند.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let currentFileManager = null;
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            await initializeFileManager('fa');
+        });
+
+        async function initializeFileManager(locale) {
+            // Remove existing file manager and cleanup
+            const container = document.getElementById('persianFileManager');
+            
+            // Cleanup old instance completely
+            if (currentFileManager && typeof currentFileManager.destroy === 'function') {
+                currentFileManager.destroy();
+            }
+            
+            // Clear container
+            container.innerHTML = '';
+
+            // Create new file manager
+            currentFileManager = new FileManager('#persianFileManager', {
+                path: '/',
+                view: 'largeicons',
+                ajaxSettings: {
+                    url: '/api/FileManager/FileOperations',
+                    uploadUrl: '/api/FileManager/Upload',
+                    downloadUrl: '/api/FileManager/Download',
+                    getImageUrl: '/api/FileManager/GetImage'
+                },
+                toolbarSettings: {
+                    visible: true,
+                    items: ['NewFolder', 'Upload', '|', 'Cut', 'Copy', 'Paste', '|', 'Delete', 'Download', 'Rename', '|', 'Zip', 'Unzip', '|', 'Refresh', 'View', 'Details']
+                }
+            });
+
+            // Load locale and initialize
+            await currentFileManager.initializeWithLocale(locale);
+            currentFileManager.init();
+            
+            // Ensure direction is set after render
+            currentFileManager.updateDirection();
+        }
+
+        async function switchLocale(locale) {
+            // Update button states
+            document.querySelectorAll('.btn-group button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('button').classList.add('active');
+
+            // Reinitialize with new locale
+            await initializeFileManager(locale);
+        }
+    </script>
+}
+

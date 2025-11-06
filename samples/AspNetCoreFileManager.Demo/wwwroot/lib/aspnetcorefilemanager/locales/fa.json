@@ -1,0 +1,210 @@
+﻿{
+  "toolbar": {
+    "newFolder": "پوشه جدید",
+    "upload": "آپلود",
+    "delete": "حذف",
+    "download": "دانلود",
+    "rename": "تغییر نام",
+    "zip": "ساخت ZIP",
+    "unzip": "استخراج ZIP",
+    "refresh": "بروزرسانی",
+    "view": "نمایش",
+    "details": "جزئیات",
+    "cut": "برش",
+    "copy": "کپی",
+    "paste": "چسباندن",
+    "move": "انتقال",
+    "sortBy": "مرتب‌سازی"
+  },
+  "contextMenu": {
+    "open": "باز کردن",
+    "cut": "برش",
+    "copy": "کپی",
+    "paste": "چسباندن",
+    "delete": "حذف",
+    "rename": "تغییر نام",
+    "zip": "ساخت ZIP",
+    "unzip": "استخراج ZIP",
+    "details": "جزئیات",
+    "move": "انتقال به",
+    "copyTo": "کپی به"
+  },
+  "dialogs": {
+    "newFolder": {
+      "title": "ایجاد پوشه جدید",
+      "label": "نام پوشه:",
+      "placeholder": "نام پوشه را وارد کنید",
+      "create": "ایجاد",
+      "cancel": "انصراف"
+    },
+    "rename": {
+      "title": "تغییر نام",
+      "label": "نام جدید:",
+      "placeholder": "نام جدید را وارد کنید",
+      "rename": "تغییر نام",
+      "cancel": "انصراف"
+    },
+    "upload": {
+      "title": "آپلود فایل‌ها",
+      "selectFiles": "انتخاب فایل‌ها",
+      "dragDrop": "یا فایل‌ها را اینجا بکشید و رها کنید",
+      "upload": "آپلود فایل‌ها",
+      "cancel": "انصراف"
+    },
+    "createZip": {
+      "title": "ساخت آرشیو ZIP",
+      "label": "نام فایل ZIP:",
+      "placeholder": "archive.zip",
+      "create": "ساخت ZIP",
+      "cancel": "انصراف"
+    },
+    "moveTo": {
+      "title": "انتقال به",
+      "label": "انتخاب مقصد:",
+      "move": "انتقال",
+      "cancel": "انصراف"
+    },
+    "copyTo": {
+      "title": "کپی به",
+      "label": "انتخاب مقصد:",
+      "copy": "کپی",
+      "cancel": "انصراف"
+    },
+    "delete": {
+      "title": "تأیید حذف",
+      "message": "آیا مطمئن هستید که می‌خواهید موارد انتخاب شده را حذف کنید؟",
+      "confirm": "حذف",
+      "cancel": "انصراف"
+    },
+    "extractZip": {
+      "title": "استخراج ZIP",
+      "confirmSingle": "فایل \"{0}\" در پوشه فعلی استخراج شود؟",
+      "confirmMultiple": "{0} فایل ZIP در پوشه فعلی استخراج شود؟\\n\\nفایل‌ها: {1}",
+      "confirm": "استخراج",
+      "cancel": "انصراف"
+    }
+  },
+  "messages": {
+    "noSelection": "موردی انتخاب نشده",
+    "noSelectionDesc": "لطفاً ابتدا یک یا چند مورد را انتخاب کنید.",
+    "noFilesSelected": "فایلی انتخاب نشده است",
+    "noFilesSelectedDesc": "لطفاً یک یا چند فایل یا پوشه را انتخاب کنید.",
+    "invalidSelection": "انتخاب نامعتبر",
+    "nonZipFiles": "لطفاً فقط فایل‌های ZIP را برای استخراج انتخاب کنید. برخی فایل‌های غیر ZIP انتخاب شده‌اند.",
+    "selectZipFiles": "لطفاً یک یا چند فایل ZIP برای استخراج انتخاب کنید.",
+    "selectZipFilesDesc": "فقط فایل‌های ZIP قابل استخراج هستند.",
+    "selectItemsForZip": "لطفاً یک یا چند فایل یا پوشه برای ساخت آرشیو ZIP انتخاب کنید.",
+    "selectSingleItem": "لطفاً دقیقاً یک مورد را انتخاب کنید.",
+    "selectSingleItemRename": "لطفاً یک مورد را برای تغییر نام انتخاب کنید.",
+    "selectDestination": "لطفاً یک پوشه مقصد انتخاب کنید.",
+    "enterFolderName": "لطفاً نام پوشه را وارد کنید",
+    "enterNewName": "لطفاً نام جدید را وارد کنید",
+    "enterZipName": "لطفاً نام فایل ZIP را وارد کنید",
+    "selectItemsToDelete": "لطفاً موارد مورد نظر برای حذف را انتخاب کنید",
+    "selectItemsToCopy": "لطفاً یک یا چند مورد برای کپی کردن انتخاب کنید.",
+    "selectItemsToCut": "لطفاً یک یا چند مورد برای برش انتخاب کنید.",
+    "clipboardEmpty": "کلیپ‌بورد خالی است",
+    "clipboardEmptyDesc": "هیچ موردی در کلیپ‌بورد وجود ندارد. لطفاً ابتدا مواردی را کپی یا برش دهید.",
+    "sameLocation": "موقعیت یکسان",
+    "sameLocationDesc": "شما در حال تلاش برای چسباندن در همان موقعیت هستید. لطفاً به پوشه دیگری بروید.",
+    "confirmDelete": "تأیید حذف",
+    "confirmDeleteMsg": "آیا مطمئن هستید که می‌خواهید {0} مورد را حذف کنید؟",
+    "confirmCopy": "کپی کردن موارد",
+    "confirmCopyMsg": "کپی {0} مورد از \"{1}\" به \"{2}\"؟",
+    "confirmMove": "انتقال موارد",
+    "confirmMoveMsg": "انتقال {0} مورد از \"{1}\" به \"{2}\"؟",
+    "confirmExtractZip": "استخراج ZIP",
+    "confirmExtractSingle": "فایل \"{0}\" در پوشه فعلی استخراج شود؟",
+    "confirmExtractMultiple": "{0} فایل ZIP در پوشه فعلی استخراج شود؟\n\nفایل‌ها: {1}",
+    "validationError": "خطای اعتبارسنجی",
+    "operationSuccess": "عملیات با موفقیت انجام شد",
+    "createZipSuccess": "آرشیو ZIP با موفقیت ساخته شد",
+    "extractZipSuccess": "{0} فایل با موفقیت استخراج شد",
+    "uploadSuccess": "فایل‌ها با موفقیت آپلود شدند",
+    "deleteSuccess": "موارد با موفقیت حذف شدند",
+    "renameSuccess": "نام مورد با موفقیت تغییر کرد",
+    "moveSuccess": "موارد با موفقیت منتقل شدند",
+    "copySuccess": "موارد با موفقیت کپی شدند",
+    "createFolderSuccess": "پوشه با موفقیت ایجاد شد",
+    "operationFailed": "عملیات ناموفق",
+    "createZipFailed": "ساخت آرشیو ZIP ناموفق بود",
+    "extractZipFailed": "استخراج آرشیو ZIP ناموفق بود",
+    "someExtractionsFailed": "برخی استخراج‌ها ناموفق بودند:\\n{0}",
+    "uploadFailed": "آپلود فایل ناموفق بود",
+    "deleteFailed": "عملیات حذف ناموفق بود",
+    "renameFailed": "تغییر نام ناموفق بود",
+    "moveFailed": "عملیات انتقال ناموفق بود",
+    "copyFailed": "عملیات کپی ناموفق بود",
+    "createFolderFailed": "ایجاد پوشه ناموفق بود",
+    "fileExists": "فایلی با نام '{0}' از قبل وجود دارد.",
+    "folderExists": "پوشه‌ای با نام '{0}' از قبل وجود دارد.",
+    "invalidName": "نام نامعتبر",
+    "invalidPath": "مسیر نامعتبر",
+    "accessDenied": "دسترسی رد شد",
+    "networkError": "خطای شبکه. لطفاً اتصال خود را بررسی کنید."
+  },
+  "view": {
+    "largeIcons": "آیکون‌های بزرگ",
+    "details": "جزئیات"
+  },
+  "dialog": {
+    "ok": "تأیید",
+    "cancel": "انصراف",
+    "confirm": "تأیید"
+  },
+  "toast": {
+    "copied": "کپی شد",
+    "copiedMessage": "{0} مورد در کلیپ‌بورد کپی شد",
+    "cut": "برش خورد",
+    "cutMessage": "{0} مورد در کلیپ‌بورد برش داده شد",
+    "success": "موفق",
+    "error": "خطا"
+  },
+  "modal": {
+    "createFolder": {
+      "title": "ایجاد پوشه جدید",
+      "placeholder": "نام پوشه",
+      "create": "ایجاد",
+      "cancel": "انصراف"
+    },
+    "rename": {
+      "title": "تغییر نام",
+      "placeholder": "نام جدید",
+      "rename": "تغییر نام",
+      "cancel": "انصراف"
+    },
+    "upload": {
+      "title": "آپلود فایل‌ها",
+      "dragDrop": "فایل‌ها را اینجا بکشید و رها کنید یا برای انتخاب کلیک کنید",
+      "browseFiles": "انتخاب فایل‌ها",
+      "filesToUpload": "فایل‌های آماده آپلود:",
+      "upload": "آپلود",
+      "cancel": "انصراف"
+    },
+    "createZip": {
+      "title": "ایجاد آرشیو ZIP",
+      "placeholder": "نام آرشیو",
+      "create": "ایجاد",
+      "cancel": "انصراف"
+    }
+  },
+  "columns": {
+    "name": "نام",
+    "dateModified": "تاریخ تغییر",
+    "type": "نوع",
+    "size": "اندازه"
+  },
+  "breadcrumb": {
+    "home": "خانه"
+  },
+  "navigation": {
+    "folders": "پوشه‌ها",
+    "files": "فایل‌ها"
+  },
+  "loading": {
+    "message": "در حال بارگذاری..."
+  },
+  "noItems": "موردی برای نمایش وجود ندارد",
+  "emptyFolder": "این پوشه خالی است"
+}
+

@@ -1,0 +1,339 @@
+@{
+    ViewData["Title"] = "API Reference";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4">API Reference</h1>
+    
+    <div class="demo-section">
+        <h2>Tag Helper Attributes</h2>
+        <p>Complete reference of all available attributes for the <code>&lt;file-manager&gt;</code> tag helper.</p>
+        
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th style="width: 20%;">Attribute</th>
+                    <th style="width: 15%;">Type</th>
+                    <th style="width: 15%;">Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>string</td>
+                    <td>auto</td>
+                    <td>Unique identifier for the file manager instance</td>
+                </tr>
+                <tr>
+                    <td><code>path</code></td>
+                    <td>string</td>
+                    <td>"/"</td>
+                    <td>Initial path to display in the file manager</td>
+                </tr>
+                <tr>
+                    <td><code>view</code></td>
+                    <td>string</td>
+                    <td>"largeicons"</td>
+                    <td>Initial view mode: "largeicons" or "details"</td>
+                </tr>
+                <tr>
+                    <td><code>ajax-url</code></td>
+                    <td>string</td>
+                    <td>/api/FileManager/FileOperations</td>
+                    <td>URL for file operations endpoint</td>
+                </tr>
+                <tr>
+                    <td><code>upload-url</code></td>
+                    <td>string</td>
+                    <td>/api/FileManager/Upload</td>
+                    <td>URL for file upload endpoint</td>
+                </tr>
+                <tr>
+                    <td><code>download-url</code></td>
+                    <td>string</td>
+                    <td>/api/FileManager/Download</td>
+                    <td>URL for file download endpoint</td>
+                </tr>
+                <tr>
+                    <td><code>get-image-url</code></td>
+                    <td>string</td>
+                    <td>/api/FileManager/GetImage</td>
+                    <td>URL for image preview endpoint</td>
+                </tr>
+                <tr>
+                    <td><code>allow-drag-drop</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Enable drag and drop file upload</td>
+                </tr>
+                <tr>
+                    <td><code>allow-multi-selection</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Allow selecting multiple files at once</td>
+                </tr>
+                <tr>
+                    <td><code>show-file-extension</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show file extensions in file names</td>
+                </tr>
+                <tr>
+                    <td><code>show-hidden-items</code></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>Show hidden files and folders</td>
+                </tr>
+                <tr>
+                    <td><code>show-thumbnail</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show thumbnails for image files</td>
+                </tr>
+                <tr>
+                    <td><code>enable-persistence</code></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>Save and restore state on page reload</td>
+                </tr>
+                <tr>
+                    <td><code>enable-rtl</code></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>Enable right-to-left layout</td>
+                </tr>
+                <tr>
+                    <td><code>show-toolbar</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show the toolbar with action buttons</td>
+                </tr>
+                <tr>
+                    <td><code>show-navigation</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Show the navigation pane with folder tree</td>
+                </tr>
+                <tr>
+                    <td><code>show-context-menu</code></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Enable context menu on right-click</td>
+                </tr>
+                <tr>
+                    <td><code>height</code></td>
+                    <td>string</td>
+                    <td>"600px"</td>
+                    <td>Height of the file manager container</td>
+                </tr>
+                <tr>
+                    <td><code>css-class</code></td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Additional CSS classes for the container</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="demo-section">
+        <h2>JavaScript API</h2>
+        
+        <h3 class="h4 mt-4">Constructor</h3>
+        <div class="code-block">
+            <pre><code>new FileManager(element, options)</code></pre>
+        </div>
+        <p><strong>Parameters:</strong></p>
+        <ul>
+            <li><code>element</code> - CSS selector string or DOM element</li>
+            <li><code>options</code> - Configuration object (optional)</li>
+        </ul>
+        
+        <h3 class="h4 mt-4">Methods</h3>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 30%;">Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>refreshFiles()</code></td>
+                    <td>Refreshes the current folder contents from the server</td>
+                </tr>
+                <tr>
+                    <td><code>getSelectedItems()</code></td>
+                    <td>Returns an array of currently selected file/folder objects</td>
+                </tr>
+                <tr>
+                    <td><code>getCurrentPath()</code></td>
+                    <td>Returns the current path as a string</td>
+                </tr>
+                <tr>
+                    <td><code>on(eventName, handler)</code></td>
+                    <td>Attaches an event handler for the specified event</td>
+                </tr>
+                <tr>
+                    <td><code>destroy()</code></td>
+                    <td>Destroys the file manager instance and cleans up resources</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 class="h4 mt-4">Events</h3>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 20%;">Event</th>
+                    <th>Description</th>
+                    <th style="width: 30%;">Event Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>success</code></td>
+                    <td>Triggered when an AJAX operation completes successfully</td>
+                    <td><code>{ response: object }</code></td>
+                </tr>
+                <tr>
+                    <td><code>failure</code></td>
+                    <td>Triggered when an AJAX operation fails</td>
+                    <td><code>{ error: object }</code></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3 class="h4 mt-4">Example Usage</h3>
+        <div class="code-block">
+            <pre><code>// Create instance
+var fm = new FileManager('#myFileManager', {
+    path: '/Documents',
+    view: 'details',
+    enablePersistence: true
+});
+
+// Attach event handlers
+fm.on('success', function(e) {
+    console.log('Operation successful:', e.response);
+});
+
+fm.on('failure', function(e) {
+    console.error('Operation failed:', e.error);
+});
+
+// Use methods
+var selectedItems = fm.getSelectedItems();
+console.log('Selected:', selectedItems);
+
+var currentPath = fm.getCurrentPath();
+console.log('Current path:', currentPath);
+
+// Refresh manually
+fm.refreshFiles();</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Backend API</h2>
+        
+        <h3 class="h4">Service Registration</h3>
+        <div class="code-block">
+            <pre><code>using AspNetCoreFileManager.Extensions;
+
+// In Program.cs or Startup.cs
+var filesPath = Path.Combine(builder.Environment.ContentRootPath, "Files");
+builder.Services.AddFileManager(filesPath);
+
+// Or with custom implementation
+builder.Services.AddFileManager&lt;MyCustomFileManagerService&gt;();</code></pre>
+        </div>
+        
+        <h3 class="h4 mt-4">IFileManagerService Interface</h3>
+        <div class="code-block">
+            <pre><code>public interface IFileManagerService
+{
+    FileManagerResponse GetFiles(string path, bool showHiddenItems = false, string[]? filter = null);
+    FileManagerResponse CreateFolder(string path, string name);
+    FileManagerResponse Delete(string path, string[] names);
+    FileManagerResponse Rename(string path, string oldName, string newName, bool showFileExtension = true);
+    FileManagerResponse Copy(string path, string targetPath, string[] names, string[]? renameFiles = null, FileManagerItem? targetData = null);
+    FileManagerResponse Move(string path, string targetPath, string[] names, string[]? renameFiles = null, FileManagerItem? targetData = null);
+    FileManagerResponse GetDetails(string path, string[]? names = null, FileManagerItem[]? data = null);
+    FileManagerResponse Search(string path, string searchString, bool showHiddenItems = false, bool caseSensitive = false);
+    FileManagerResponse Upload(string path, IFormFileCollection files, string action = "save");
+    (byte[] FileContent, string FileName, string ContentType) Download(string path, string[]? names = null, FileManagerItem[]? data = null);
+    (byte[] FileContent, string ContentType) GetImage(string path, string? id = null);
+}</code></pre>
+        </div>
+        
+        <h3 class="h4 mt-4">Custom Implementation Example</h3>
+        <div class="code-block">
+            <pre><code>public class MyCustomFileManagerService : IFileManagerService
+{
+    // Implement all interface methods
+    // You can use Azure Blob Storage, AWS S3, Database, etc.
+    
+    public FileManagerResponse GetFiles(string path, bool showHiddenItems = false, string[]? filter = null)
+    {
+        // Your custom implementation
+        // For example: retrieve files from Azure Blob Storage
+    }
+    
+    // ... other methods
+}</code></pre>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Data Models</h2>
+        
+        <h3 class="h4">FileManagerRequest</h3>
+        <div class="code-block">
+            <pre><code>public class FileManagerRequest
+{
+    public string Action { get; set; }           // read, delete, copy, move, etc.
+    public string Path { get; set; }             // Current path
+    public string? TargetPath { get; set; }      // For copy/move operations
+    public string[]? Names { get; set; }         // File/folder names
+    public string? Name { get; set; }            // Single name
+    public string? NewName { get; set; }         // For rename
+    public string? SearchString { get; set; }    // For search
+    public bool ShowHiddenItems { get; set; }
+    public bool CaseSensitive { get; set; }
+    public bool ShowFileExtension { get; set; }
+    // ... more properties
+}</code></pre>
+        </div>
+        
+        <h3 class="h4 mt-4">FileManagerResponse</h3>
+        <div class="code-block">
+            <pre><code>public class FileManagerResponse
+{
+    public FileManagerItem? Cwd { get; set; }          // Current working directory
+    public List&lt;FileManagerItem&gt;? Files { get; set; }  // List of files/folders
+    public ErrorDetails? Error { get; set; }           // Error information
+    public FileDetails? Details { get; set; }          // Details information
+}</code></pre>
+        </div>
+        
+        <h3 class="h4 mt-4">FileManagerItem</h3>
+        <div class="code-block">
+            <pre><code>public class FileManagerItem
+{
+    public string Name { get; set; }
+    public long Size { get; set; }
+    public bool IsFile { get; set; }
+    public DateTime DateCreated { get; set; }
+    public DateTime DateModified { get; set; }
+    public string Type { get; set; }
+    public bool HasChild { get; set; }
+    public string FilterPath { get; set; }
+    public string? Id { get; set; }
+    public FileManagerPermission? Permission { get; set; }
+}</code></pre>
+        </div>
+    </div>
+</div>
+
