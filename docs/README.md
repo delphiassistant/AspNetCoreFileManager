@@ -1,52 +1,78 @@
-# ASP.NET Core File Manager Documentation
+# ASP.NET Core File Manager - Documentation
 
-Welcome to the comprehensive documentation for ASP.NET Core File Manager.
+Welcome to the ASP.NET Core File Manager documentation!
 
-## Table of Contents
+## ?? Documentation Structure
 
-1. [Getting Started](getting-started.md)
-2. [Configuration](configuration.md)
-3. [API Reference](api-reference.md)
-4. [ZIP Operations](zip-operations.md)
-5. [Customization](customization.md)
-6. [Examples](examples.md)
-7. [Troubleshooting](troubleshooting.md)
+### Getting Started
+- [Main README](../README.md) - Project overview, installation, and quick start
+- [Persian README](../README_FA.md) - ‰”ŒÂ ›«—”Ì „” ‰œ« 
 
-## Quick Links
+### Guides
+- [Localization Guide](guides/LOCALIZATION.md) - How to add support for new languages
+- [NuGet Package Guide](guides/NUGET_PACKAGE.md) - Publishing and versioning
 
-- [Installation Guide](getting-started.md#installation)
-- [Tag Helper Reference](api-reference.md#tag-helper)
-- [JavaScript API](api-reference.md#javascript-api)
-- [Backend Services](api-reference.md#backend-services)
-- [Custom File Providers](customization.md#custom-providers)
-- [Styling Guide](customization.md#styling)
+### Features
+- [ZIP Operations](features/ZIP_OPERATIONS.md) - Creating and extracting ZIP files
 
-## Overview
+### Reference
+- [Troubleshooting](TROUBLESHOOTING.md) - Common issues and solutions
+- [Changelog](../CHANGELOG.md) - Version history and changes
 
-ASP.NET Core File Manager is a comprehensive file management solution that provides:
+### Archive
+- [Version 1.0.2 Fixes](archive/v1.0.2-fixes.md)
+- [Version 1.0.3.1 Fixes](archive/v1.0.3.1-fixes.md)
+- [Version 1.0.4 Release](archive/v1.0.4-release.md)
 
-- **Full-featured file operations** - Create, read, update, delete files and folders
-- **Modern UI** - Built with Bootstrap 5 and Font Awesome
-- **Easy integration** - Simple Tag Helper or JavaScript API
-- **Extensible** - Implement custom file providers for cloud storage
-- **Responsive** - Works on all devices
-- **RTL Support** - Full right-to-left layout support
-- **No external dependencies** - Pure ASP.NET Core implementation
+## ?? Quick Links
 
-## System Requirements
+- [GitHub Repository](https://github.com/delphiassistant/AspNetCoreFileManager)
+- [Report Issues](https://github.com/delphiassistant/AspNetCoreFileManager/issues)
+- [NuGet Package](https://www.nuget.org/packages/AspNetCoreFileManager)
 
-- .NET 8.0 or higher
-- ASP.NET Core MVC or Razor Pages application
-- Bootstrap 5 (included via CDN or local)
-- Font Awesome 6 (included via CDN or local)
+## ?? Usage Examples
 
-## License
+### Basic Setup
 
-MIT License - See [LICENSE](../LICENSE) file for details.
+``csharp
+// In Program.cs
+var filesPath = Path.Combine(builder.Environment.ContentRootPath, "Files");
+builder.Services.AddFileManager(filesPath);
+``
 
-## Support
+### Tag Helper
 
-For issues, questions, or contributions:
-- GitHub Issues: https://github.com/yourusername/AspNetCoreFileManager/issues
-- Email: support@example.com
+``html
+<file-manager 
+    id="myFileManager" 
+    path="/Documents" 
+    view="details"
+    enable-rtl="false">
+</file-manager>
+``
 
+### JavaScript API
+
+``javascript
+var fm = new FileManager('#myElement', {
+    path: '/',
+    view: 'largeicons',
+    allowDragAndDrop: true
+});
+
+fm.on('success', function(e) {
+    console.log('Success:', e);
+});
+``
+
+## ?? Contributing
+
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for contribution guidelines.
+
+## ?? License
+
+This project is licensed under the MIT License - see [LICENSE](../LICENSE).
+
+---
+
+Last updated: 2025-11-06

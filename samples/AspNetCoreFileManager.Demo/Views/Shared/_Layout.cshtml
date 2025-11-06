@@ -118,12 +118,10 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- File Manager JS -->
+    <!-- File Manager JS (Merged: core + events + utils + zip + destroy) -->
     <script src="~/lib/aspnetcorefilemanager/js/filemanager.js" asp-append-version="true"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-events.js" asp-append-version="true"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-utils.js" asp-append-version="true"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-zip.js" asp-append-version="true"></script>
-    <script src="~/lib/aspnetcorefilemanager/js/filemanager-destroy.js" asp-append-version="true"></script>
+    
+    <!-- File Manager i18n (Localization - kept separate) -->
     <script src="~/lib/aspnetcorefilemanager/js/filemanager-i18n.js" asp-append-version="true"></script>
     
     @await RenderSectionAsync("Scripts", required: false)
